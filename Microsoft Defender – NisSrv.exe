@@ -1,0 +1,15 @@
+Microsoft Defender – NisSrv.exe
+Alert Summary
+
+NisSrv.exe executed from the Windows Defender platform directory.
+
+Investigation Findings
+Process: NisSrv.exe
+Path: C:\ProgramData\Microsoft\Windows Defender\Platform\...
+Parent Process: services.exe
+User Context: NT AUTHORITY\LOCAL SERVICE
+Activity matched normal Microsoft Defender service behavior.
+
+Verdict
+
+Benign Microsoft Defender activity.

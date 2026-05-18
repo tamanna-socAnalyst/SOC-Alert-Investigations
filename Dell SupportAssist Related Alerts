@@ -1,0 +1,54 @@
+1. Dell SupportAssist Plugin Execution
+Alert Summary
+
+Dell SupportAssist updater executed from TEMP directory.
+
+Investigation Findings
+Executable: DellUpdateSupportAssistPlugin.exe
+TEMP extraction paths with GUID folders observed.
+WiX Burn bootstrapper parameters detected:
+-BURN.ELEVATED
+-BURN.CLEAN.ROOM
+Parent-child process chain matched Dell updater workflow.
+Verdict
+
+Likely benign Dell SupportAssist update activity.
+
+2. Dell Bootstrapper Clean Room Execution
+Alert Summary
+
+Dell updater relaunched itself in clean-room mode.
+
+Investigation Findings
+Executed from: C:\Windows\Temp\{GUID}\.CR\
+SYSTEM context execution.
+Expected WiX Burn installer behavior.
+Verdict
+
+Benign Dell bootstrapper activity.
+
+3. Dell SupportAssist OS Recovery Plugin Installer
+Alert Summary
+
+Dell UpdateService launched OS Recovery Plugin installer.
+
+Investigation Findings
+Parent: ServiceShell.exe
+Download path: C:\ProgramData\Dell\UpdateService\Downloads\
+Silent installation arguments detected.
+Verdict
+
+Benign Dell update installation.
+
+4. Dell 7z.exe Archive Validation
+Alert Summary
+
+Dell installer used 7z.exe to validate package archive.
+
+Investigation Findings
+Command: 7Z.EXE T <package>.EXE
+T parameter indicates archive integrity test.
+Common OEM installer behavior.
+Verdict
+
+Benign archive validation activity.

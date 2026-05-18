@@ -1,0 +1,27 @@
+1. Canon Printer Detection Event
+Alert Summary
+
+Windows detected Canon MF4800 printer.
+
+Investigation Findings
+Event ID: 6416
+Device Class: PrintQueue
+Vendor IDs matched Canon USB printer enumeration.
+Verdict
+
+Benign Canon printer registration event.
+
+2. Microsoft Print to PDF Registration
+Alert Summary
+
+Windows registered Microsoft Print to PDF virtual printer.
+
+Investigation Findings
+Event ID: 6416
+Device Class: PrintQueue
+Virtual printer enumeration by Windows.
+Verdict
+
+Benign Windows printer registration activity.
+
+3.

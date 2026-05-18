@@ -1,0 +1,27 @@
+1. Opera Patch Installer Execution
+Alert Summary
+
+Opera auto-updater launched patch installer from TEMP directory.
+
+Investigation Findings
+Parent Process: opera_autoupdate.exe
+TEMP extraction path observed.
+Browser version patch naming matched Opera update format.
+Triggered through scheduled task updater.
+Verdict
+
+Likely benign Opera browser auto-update activity.
+
+2. Opera installer.exe Version Check
+Alert Summary
+
+Opera installer executed with --version argument.
+
+Investigation Findings
+Parent: opera_autoupdate.exe
+Installer extracted to .opera TEMP directory.
+Command used for installer validation/version check.
+Verdict
+
+Benign Opera update validation activity.
+

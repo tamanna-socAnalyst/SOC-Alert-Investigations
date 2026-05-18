@@ -1,0 +1,66 @@
+1. Office Click-to-Run Scheduled Task Enable
+Alert Summary
+
+OfficeClickToRun.exe used schtasks.exe to enable Office scheduled tasks.
+
+Investigation Findings
+Command: schtasks.exe /change /tn "Microsoft\Office\Office ClickToRun Service Monitor" /enable
+Parent: OfficeClickToRun.exe
+Path matched legitimate Microsoft Office Click-to-Run service.
+Verdict
+
+Benign Microsoft Office update activity.
+
+
+
+2. Office Automatic Updates Task Enable
+Alert Summary
+
+Office updater enabled scheduled task: Office Automatic Updates 2.0
+
+Investigation Findings
+schtasks.exe launched by OfficeClickToRun.exe
+SYSTEM context execution
+Common Office maintenance behavior.
+Verdict
+
+Benign Office update activity.
+
+OfficeBackgroundTaskHandlerRegistration Task Creation
+Alert Summary
+
+3. Integrator.exe created Office scheduled task.
+
+Investigation Findings
+Command used schtasks.exe /create
+XML task file located under: C:\ProgramData\Microsoft\ClickToRun\
+Part of Office installation/integration workflow.
+Verdict
+
+Benign Microsoft Office installation activity.
+
+4. OfficeBackgroundTaskHandlerLogon Task Creation
+Alert Summary
+
+Office Integrator created logon scheduled task.
+
+Investigation Findings
+Task: OfficeBackgroundTaskHandlerLogon
+Parent: Integrator.exe
+Process terminated normally.
+Verdict
+
+Benign Office scheduled task creation
+
+5. officeTelemetryAgentFallBack2016 Task Deletion
+Alert Summary
+
+Office installer removed legacy telemetry task.
+
+Investigation Findings
+Command: schtasks.exe /Delete /F
+Parent: Integrator.exe
+Cleanup operation during Office update/install.
+Verdict
+
+Benign Office maintenance activity.
